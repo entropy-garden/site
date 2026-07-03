@@ -1,0 +1,79 @@
+baseURL = "http://localhost:1313/"
+title = "Entropy Garden"
+theme = "PaperMod"
+languageCode = "en-us"
+
+defaultContentLanguage = "en"
+
+[pagination]
+pagerSize = 10
+
+[languages]
+
+[languages.en]
+contentDir = "content/en"
+languageName = "English"
+weight = 1
+
+[languages.en.params]
+homeInfoParams = { Title = "Entropy Garden", Content = "Data, information systems and structured thinking." }
+
+[languages.ru]
+contentDir = "content/ru"
+languageName = "Русский"
+weight = 2
+
+[languages.ru.params]
+homeInfoParams = { Title = "Entropy Garden", Content = "Данные, информационные системы и структурированное мышление." }
+
+[params]
+defaultTheme = "auto"
+disableThemeToggle = false
+
+ShowReadingTime = true
+ShowShareButtons = false
+ShowPostNavLinks = true
+ShowBreadCrumbs = true
+ShowCodeCopyButtons = true
+ShowToc = true
+
+[languages.en.menu]
+
+[[languages.en.menu.main]]
+identifier = "about"
+name = "About"
+url = "/about/"
+weight = 10
+
+[[languages.en.menu.main]]
+identifier = "posts"
+name = "Posts"
+url = "/posts/"
+weight = 20
+
+[[languages.en.menu.main]]
+identifier = "projects"
+name = "Projects"
+url = "/projects/"
+weight = 30
+
+
+[languages.ru.menu]
+
+[[languages.ru.menu.main]]
+identifier = "about"
+name = "О проекте"
+url = "/about/"
+weight = 10
+
+[[languages.ru.menu.main]]
+identifier = "posts"
+name = "Посты"
+url = "/posts/"
+weight = 20
+
+[[languages.ru.menu.main]]
+identifier = "projects"
+name = "Проекты"
+url = "/projects/"
+weight = 30
