@@ -15,16 +15,12 @@ contentDir = "content/en"
 languageName = "English"
 weight = 1
 
-[languages.en.params]
-homeInfoParams = { Title = "Entropy Garden", Content = "Data, information systems and structured thinking." }
-
 [languages.ru]
 contentDir = "content/ru"
 languageName = "Русский"
 weight = 2
 
-[languages.ru.params]
-homeInfoParams = { Title = "Entropy Garden", Content = "Данные, информационные системы и структурированное мышление." }
+
 
 [params]
 defaultTheme = "auto"
