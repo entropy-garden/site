@@ -1,3 +1,50 @@
+---
+title: "Data Quality Assessment of an Argentine Airport Dataset"
+date: 2026-07-22T15:00:00+03:00
+draft: false
+
+description: "A comprehensive data quality assessment of the OurAirports dataset for Argentina using the DAMA-DMBOK framework. The project evaluates completeness, uniqueness, consistency, validity, and accuracy through business rules, spatial analysis, and external reference datasets."
+
+summary: "A practical application of Data Stewardship principles, including business rule validation, identity resolution, spatial matching, and external accuracy assessment."
+
+tags:
+  - Data Quality
+  - Data Governance
+  - Data Stewardship
+  - DAMA-DMBOK
+  - Python
+  - Pandas
+  - GeoPandas
+  - Aviation
+  - Identity Resolution
+  - Master Data Management
+
+keywords:
+  - data quality
+  - data governance
+  - data stewardship
+  - DAMA
+  - DMBOK
+  - python
+  - airport database
+  - aviation
+  - identity resolution
+  - spatial matching
+  - master data management
+
+author: "Paula Petrenko"
+
+showToc: true
+TocOpen: true
+ShowReadingTime: true
+ShowBreadCrumbs: true
+ShowPostNavLinks: true
+ShowCodeCopyButtons: true
+ShowWordCount: true
+comments: false
+---
+
+
 # Data Quality Assessment of an Airport Database for Argentina
 
 The assessment follows the data quality dimensions defined in the DAMA-DMBOK framework and evaluates the dataset through a set of business rules supported by external reference sources where applicable.
@@ -71,103 +118,6 @@ To gain a clearer perspective, the first five records of the dataset are display
 
 
 
-
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>id</th>
-      <th>type</th>
-      <th>name</th>
-      <th>iso_country</th>
-      <th>latitude_deg</th>
-      <th>longitude_deg</th>
-      <th>elevation_ft</th>
-      <th>ident</th>
-      <th>gps_code</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>35333</td>
-      <td>small_airport</td>
-      <td>Cullen Airport</td>
-      <td>AR</td>
-      <td>-52.885740</td>
-      <td>-68.414956</td>
-      <td>132.0</td>
-      <td>AR-0001</td>
-      <td>NaN</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>35334</td>
-      <td>small_airport</td>
-      <td>Estancia Los Cerros Airport</td>
-      <td>AR</td>
-      <td>-54.343000</td>
-      <td>-67.837532</td>
-      <td>1914.0</td>
-      <td>AR-0002</td>
-      <td>NaN</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>35335</td>
-      <td>small_airport</td>
-      <td>Rio Bellavista Airport</td>
-      <td>AR</td>
-      <td>-53.982700</td>
-      <td>-68.523598</td>
-      <td>201.0</td>
-      <td>AR-0003</td>
-      <td>NaN</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>35398</td>
-      <td>small_airport</td>
-      <td>Merlo Airport</td>
-      <td>AR</td>
-      <td>-32.358200</td>
-      <td>-65.017403</td>
-      <td>796.0</td>
-      <td>AR-0004</td>
-      <td>NaN</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>35399</td>
-      <td>small_airport</td>
-      <td>Bragado Airport</td>
-      <td>AR</td>
-      <td>-35.145811</td>
-      <td>-60.480294</td>
-      <td>196.0</td>
-      <td>AR-0005</td>
-      <td>SA2X</td>
-    </tr>
-  </tbody>
-</table>
-</div>
-
-
-
 In the following output, the basic structure of the DataFrame is presented. The dataset consists of 942 entries and 9 columns.
 
 A summary of data completeness and structure is provided below:
@@ -212,85 +162,6 @@ Overall, these descriptive statistics provide an initial understanding of the nu
 
 
 
-
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>latitude_deg</th>
-      <th>longitude_deg</th>
-      <th>elevation_ft</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>count</th>
-      <td>942.000000</td>
-      <td>942.000000</td>
-      <td>908.000000</td>
-    </tr>
-    <tr>
-      <th>mean</th>
-      <td>-35.390905</td>
-      <td>-62.908536</td>
-      <td>801.696035</td>
-    </tr>
-    <tr>
-      <th>std</th>
-      <td>6.671947</td>
-      <td>4.095665</td>
-      <td>1296.457558</td>
-    </tr>
-    <tr>
-      <th>min</th>
-      <td>-54.843300</td>
-      <td>-72.885820</td>
-      <td>6.000000</td>
-    </tr>
-    <tr>
-      <th>25%</th>
-      <td>-38.005901</td>
-      <td>-65.493250</td>
-      <td>131.750000</td>
-    </tr>
-    <tr>
-      <th>50%</th>
-      <td>-34.444700</td>
-      <td>-62.180665</td>
-      <td>316.000000</td>
-    </tr>
-    <tr>
-      <th>75%</th>
-      <td>-31.508499</td>
-      <td>-59.450899</td>
-      <td>903.000000</td>
-    </tr>
-    <tr>
-      <th>max</th>
-      <td>-22.123510</td>
-      <td>-53.673332</td>
-      <td>13000.000000</td>
-    </tr>
-  </tbody>
-</table>
-</div>
-
-
-
 ## 5. Business Rules Definition
 
 The business rules governing the dataset are formally defined as a set of data quality constraints. These rules translate business requirements into measurable validation criteria and serve as the reference framework for the subsequent data quality assessment.
@@ -319,92 +190,6 @@ The first dimension evaluated is **completeness**, which measures the extent to 
 As observed during the initial data exploration, missing values were identified in the `elevation_ft` and `gps_code` columns.
 
 
-
-
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>Field</th>
-      <th>Null_Values</th>
-      <th>Completeness_%</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>gps_code</td>
-      <td>717</td>
-      <td>23.89</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>elevation_ft</td>
-      <td>34</td>
-      <td>96.39</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>id</td>
-      <td>0</td>
-      <td>100.00</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>type</td>
-      <td>0</td>
-      <td>100.00</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>name</td>
-      <td>0</td>
-      <td>100.00</td>
-    </tr>
-    <tr>
-      <th>5</th>
-      <td>iso_country</td>
-      <td>0</td>
-      <td>100.00</td>
-    </tr>
-    <tr>
-      <th>6</th>
-      <td>latitude_deg</td>
-      <td>0</td>
-      <td>100.00</td>
-    </tr>
-    <tr>
-      <th>7</th>
-      <td>longitude_deg</td>
-      <td>0</td>
-      <td>100.00</td>
-    </tr>
-    <tr>
-      <th>8</th>
-      <td>ident</td>
-      <td>0</td>
-      <td>100.00</td>
-    </tr>
-  </tbody>
-</table>
-</div>
-
-
-
 ### 6.2 Data Uniqueness
 
 The uniqueness assessment focuses on the attributes most likely to uniquely identify an airport or heliport.
@@ -426,157 +211,11 @@ These attributes are evaluated to identify potential duplicate records that may 
 
 
 
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>Field</th>
-      <th>Duplicate Count</th>
-      <th>Total Records</th>
-      <th>Uniqueness %</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>ident</td>
-      <td>0</td>
-      <td>942</td>
-      <td>100.0</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>gps_code</td>
-      <td>0</td>
-      <td>225</td>
-      <td>100.0</td>
-    </tr>
-  </tbody>
-</table>
-</div>
-
-
-
 **Spatial Uniqueness**: To identify potential spatial duplicates, a proximity-based clustering analysis was performed using a 2 km radius. Heliports, balloonports, and closed airports were excluded from this assessment. Heliports are commonly located in close proximity within urban areas, while balloonports and closed airports are not relevant to the objective of identifying potential duplicates among active airports. Including these facility types would introduce expected proximity clusters and increase the likelihood of false positives. Consequently, this analysis focuses on active airport records, where close geographic proximity is more likely to indicate duplicate or inconsistent location data rather than distinct facilities.
 
 Records belonging to clusters with geo_cluster_size > 1 are considered potential cases requiring further review. The first five records are displayed below for inspection purposes.
 
 
-
-
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>id</th>
-      <th>type</th>
-      <th>name</th>
-      <th>iso_country</th>
-      <th>latitude_deg</th>
-      <th>longitude_deg</th>
-      <th>elevation_ft</th>
-      <th>ident</th>
-      <th>gps_code</th>
-      <th>geo_cluster_size</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>35329</td>
-      <td>small_airport</td>
-      <td>Lago Fagnano North Airport</td>
-      <td>AR</td>
-      <td>-54.499699</td>
-      <td>-67.173103</td>
-      <td>600.0</td>
-      <td>SA15</td>
-      <td>SA15</td>
-      <td>2</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>41560</td>
-      <td>small_airport</td>
-      <td>Tolhuin Lago Fagnano Airport</td>
-      <td>AR</td>
-      <td>-54.499596</td>
-      <td>-67.172084</td>
-      <td>90.0</td>
-      <td>SAWL</td>
-      <td>SAWL</td>
-      <td>2</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>348446</td>
-      <td>small_airport</td>
-      <td>Campamento Darwin Airport</td>
-      <td>AR</td>
-      <td>-47.896640</td>
-      <td>-66.460930</td>
-      <td>384.0</td>
-      <td>AR-0681</td>
-      <td>NaN</td>
-      <td>2</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>348448</td>
-      <td>small_airport</td>
-      <td>Campamento Darwin West Airport</td>
-      <td>AR</td>
-      <td>-47.880520</td>
-      <td>-66.471050</td>
-      <td>325.0</td>
-      <td>AR-0683</td>
-      <td>NaN</td>
-      <td>2</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>348749</td>
-      <td>small_airport</td>
-      <td>Stroeder Southeast Airport</td>
-      <td>AR</td>
-      <td>-40.209680</td>
-      <td>-62.604850</td>
-      <td>92.0</td>
-      <td>AR-0725</td>
-      <td>NaN</td>
-      <td>2</td>
-    </tr>
-  </tbody>
-</table>
-</div>
 
 
 
@@ -593,106 +232,6 @@ The first five records with identified inconsistencies are displayed below for i
 
 
 
-
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>id</th>
-      <th>type</th>
-      <th>name</th>
-      <th>iso_country</th>
-      <th>latitude_deg</th>
-      <th>longitude_deg</th>
-      <th>elevation_ft</th>
-      <th>ident</th>
-      <th>gps_code</th>
-      <th>equal</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>35399</td>
-      <td>small_airport</td>
-      <td>Bragado Airport</td>
-      <td>AR</td>
-      <td>-35.145811</td>
-      <td>-60.480294</td>
-      <td>196.0</td>
-      <td>AR-0005</td>
-      <td>SA2X</td>
-      <td>False</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>38698</td>
-      <td>small_airport</td>
-      <td>Bahia Blanca Aeroclub Airport</td>
-      <td>AR</td>
-      <td>-38.672059</td>
-      <td>-62.352846</td>
-      <td>49.0</td>
-      <td>AR-0023</td>
-      <td>SA92</td>
-      <td>False</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>38699</td>
-      <td>small_airport</td>
-      <td>Balcarce Aeroclub Airport</td>
-      <td>AR</td>
-      <td>-37.915600</td>
-      <td>-58.344200</td>
-      <td>393.0</td>
-      <td>AR-0024</td>
-      <td>SA20</td>
-      <td>False</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>38700</td>
-      <td>small_airport</td>
-      <td>Cipoletti Aeroclub Airport</td>
-      <td>AR</td>
-      <td>-38.893101</td>
-      <td>-67.988602</td>
-      <td>885.0</td>
-      <td>AR-0025</td>
-      <td>SAHI</td>
-      <td>False</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>38703</td>
-      <td>small_airport</td>
-      <td>Tandil Aeroclub Airport</td>
-      <td>AR</td>
-      <td>-37.265598</td>
-      <td>-59.093300</td>
-      <td>583.0</td>
-      <td>AR-0028</td>
-      <td>SA1B</td>
-      <td>False</td>
-    </tr>
-  </tbody>
-</table>
-</div>
 
 
 
@@ -721,139 +260,6 @@ A spatial validation is then performed using a geographic database of ocean wate
 
 
 
-
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>index</th>
-      <th>id</th>
-      <th>type</th>
-      <th>name</th>
-      <th>iso_country</th>
-      <th>latitude_deg</th>
-      <th>longitude_deg</th>
-      <th>elevation_ft</th>
-      <th>ident</th>
-      <th>gps_code</th>
-      <th>geometry</th>
-      <th>index_right</th>
-      <th>featurecla</th>
-      <th>scalerank</th>
-      <th>min_zoom</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>45</td>
-      <td>38721</td>
-      <td>heliport</td>
-      <td>Aries Heliport</td>
-      <td>AR</td>
-      <td>-52.6831</td>
-      <td>-68.0419</td>
-      <td>NaN</td>
-      <td>AR-0046</td>
-      <td>NaN</td>
-      <td>POINT (-68.0419 -52.6831)</td>
-      <td>0.0</td>
-      <td>Ocean</td>
-      <td>0.0</td>
-      <td>0.0</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>105</td>
-      <td>38781</td>
-      <td>heliport</td>
-      <td>Club Nautico San Isidro Heliport</td>
-      <td>AR</td>
-      <td>-34.4614</td>
-      <td>-58.5003</td>
-      <td>6.0</td>
-      <td>AR-0106</td>
-      <td>NaN</td>
-      <td>POINT (-58.5003 -34.4614)</td>
-      <td>0.0</td>
-      <td>Ocean</td>
-      <td>0.0</td>
-      <td>0.0</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>185</td>
-      <td>38861</td>
-      <td>heliport</td>
-      <td>Heliplataforma Am I Heliport</td>
-      <td>AR</td>
-      <td>-52.5192</td>
-      <td>-68.3858</td>
-      <td>98.0</td>
-      <td>AR-0186</td>
-      <td>NaN</td>
-      <td>POINT (-68.3858 -52.5192)</td>
-      <td>0.0</td>
-      <td>Ocean</td>
-      <td>0.0</td>
-      <td>0.0</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>186</td>
-      <td>38862</td>
-      <td>heliport</td>
-      <td>Heliplataforma Carina/Total Fina ELF</td>
-      <td>AR</td>
-      <td>-52.7572</td>
-      <td>-67.2194</td>
-      <td>30.0</td>
-      <td>AR-0187</td>
-      <td>NaN</td>
-      <td>POINT (-67.2194 -52.7572)</td>
-      <td>0.0</td>
-      <td>Ocean</td>
-      <td>0.0</td>
-      <td>0.0</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>187</td>
-      <td>38863</td>
-      <td>heliport</td>
-      <td>Heliplataforma/Am-2 Heliport</td>
-      <td>AR</td>
-      <td>-52.5489</td>
-      <td>-68.3125</td>
-      <td>134.0</td>
-      <td>AR-0188</td>
-      <td>NaN</td>
-      <td>POINT (-68.3125 -52.5489)</td>
-      <td>0.0</td>
-      <td>Ocean</td>
-      <td>0.0</td>
-      <td>0.0</td>
-    </tr>
-  </tbody>
-</table>
-</div>
-
-
-
     The validity assessment identified 21 records whose coordinates intersect ocean water bodies. These records represent 2.23% of the dataset and require further review. The remaining 97.77% satisfy the validity criterion.
 
 
@@ -868,269 +274,12 @@ The first five records with elevation differences greater than 100 feet are disp
 
 
 
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>index</th>
-      <th>id</th>
-      <th>type</th>
-      <th>name</th>
-      <th>iso_country</th>
-      <th>latitude_deg</th>
-      <th>longitude_deg</th>
-      <th>elevation_ft</th>
-      <th>ident</th>
-      <th>gps_code</th>
-      <th>elevation_api</th>
-      <th>elevation_api_ft</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>1</td>
-      <td>35334</td>
-      <td>small_airport</td>
-      <td>Estancia Los Cerros Airport</td>
-      <td>AR</td>
-      <td>-54.343000</td>
-      <td>-67.837532</td>
-      <td>1914.0</td>
-      <td>AR-0002</td>
-      <td>NaN</td>
-      <td>82.0</td>
-      <td>269.02888</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>2</td>
-      <td>35335</td>
-      <td>small_airport</td>
-      <td>Rio Bellavista Airport</td>
-      <td>AR</td>
-      <td>-53.982700</td>
-      <td>-68.523598</td>
-      <td>201.0</td>
-      <td>AR-0003</td>
-      <td>NaN</td>
-      <td>95.0</td>
-      <td>311.67980</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>3</td>
-      <td>35398</td>
-      <td>small_airport</td>
-      <td>Merlo Airport</td>
-      <td>AR</td>
-      <td>-32.358200</td>
-      <td>-65.017403</td>
-      <td>796.0</td>
-      <td>AR-0004</td>
-      <td>NaN</td>
-      <td>843.0</td>
-      <td>2765.74812</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>12</td>
-      <td>42800</td>
-      <td>small_airport</td>
-      <td>Agro Servicio Yoris Airport</td>
-      <td>AR</td>
-      <td>-26.583055</td>
-      <td>-64.529724</td>
-      <td>1043.0</td>
-      <td>AR-0013</td>
-      <td>NaN</td>
-      <td>355.0</td>
-      <td>1164.69820</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>14</td>
-      <td>35409</td>
-      <td>closed</td>
-      <td>Saenz Peña Airport</td>
-      <td>AR</td>
-      <td>-26.815800</td>
-      <td>-60.448299</td>
-      <td>20.0</td>
-      <td>AR-0015</td>
-      <td>NaN</td>
-      <td>91.0</td>
-      <td>298.55644</td>
-    </tr>
-  </tbody>
-</table>
-</div>
-
-
-
     The accuracy assessment was performed on 906 records with available elevation values, excluding 36 records with missing data. The assessment identified 68 records with elevation differences exceeding the 100-foot tolerance. These records represent 7.51% of the assessed records and require further review. The remaining 92.49% satisfied the accuracy criterion.
 
 
 **Airport Record Matching** The MADHEL airport database is used as an independent reference source for record matching. The first five records are displayed below to provide an overview of its structure and key attributes.
 
 
-
-
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>name</th>
-      <th>idtext</th>
-      <th>n_id</th>
-      <th>iata</th>
-      <th>lat</th>
-      <th>lon</th>
-      <th>traffic_usage</th>
-      <th>traffic_type</th>
-      <th>waypoint_type</th>
-      <th>restrictions</th>
-      <th>remarks</th>
-      <th>opening_hours</th>
-      <th>helicopter_operations_rmk</th>
-      <th>fuel_availability</th>
-      <th>elevation</th>
-      <th>parking_remarks</th>
-      <th>country</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>CORONEL BOGADO / AGROSERVICIOS</td>
-      <td>NaN</td>
-      <td>ACB</td>
-      <td>NaN</td>
-      <td>-33.272260</td>
-      <td>-60.570660</td>
-      <td>PRIVADO</td>
-      <td>2</td>
-      <td>AD</td>
-      <td>Por encontrarse debajo del TMA ROSARIO, la alt...</td>
-      <td>Las OPS VFR deberán ajustarse a lo establecido...</td>
-      <td>nan</td>
-      <td>None</td>
-      <td>nan</td>
-      <td>44.0</td>
-      <td>nan</td>
-      <td>ARG</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>GENERAL ACHA</td>
-      <td>NaN</td>
-      <td>ACH</td>
-      <td>NaN</td>
-      <td>-37.401640</td>
-      <td>-64.613510</td>
-      <td>PUBLICO</td>
-      <td>2</td>
-      <td>AD</td>
-      <td>nan</td>
-      <td>Las OPS VFR deberán ajustarse a lo establecido...</td>
-      <td>nan</td>
-      <td>None</td>
-      <td>nan</td>
-      <td>277.0</td>
-      <td>nan</td>
-      <td>ARG</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>ARRECIFES / LA CURA MALAL</td>
-      <td>NaN</td>
-      <td>ACM</td>
-      <td>NaN</td>
-      <td>-34.075740</td>
-      <td>-60.141700</td>
-      <td>PRIVADO</td>
-      <td>2</td>
-      <td>AD</td>
-      <td>nan</td>
-      <td>Las OPS VFR deberán ajustarse a lo establecido...</td>
-      <td>nan</td>
-      <td>None</td>
-      <td>nan</td>
-      <td>37.0</td>
-      <td>nan</td>
-      <td>ARG</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>LA BANDA / ALAS DEL NORTE</td>
-      <td>NaN</td>
-      <td>ADN</td>
-      <td>NaN</td>
-      <td>-27.689278</td>
-      <td>-64.167861</td>
-      <td>NaN</td>
-      <td>2</td>
-      <td>AD</td>
-      <td>En las salidas, previas al despegue, y en las ...</td>
-      <td>Las operaciones se realizarán de acuerdo a las...</td>
-      <td>nan</td>
-      <td>None</td>
-      <td>nan</td>
-      <td>NaN</td>
-      <td>nan</td>
-      <td>ARG</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>PUERTO DESEADO</td>
-      <td>SAWD</td>
-      <td>ADO</td>
-      <td>PUD</td>
-      <td>-47.735110</td>
-      <td>-65.904100</td>
-      <td>PUBLICO</td>
-      <td>2</td>
-      <td>AD</td>
-      <td>nan</td>
-      <td>Las OPS VFR deberán ajustarse a lo establecido...</td>
-      <td>nan</td>
-      <td>None</td>
-      <td>nan</td>
-      <td>82.0</td>
-      <td>nan</td>
-      <td>ARG</td>
-    </tr>
-  </tbody>
-</table>
-</div>
 
 
 
@@ -1150,96 +299,6 @@ The table below presents the first five records that remained unmatched after co
 
 
 
-
-
-
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>id</th>
-      <th>type</th>
-      <th>name_ourairports</th>
-      <th>name</th>
-      <th>ident</th>
-      <th>idtext</th>
-      <th>spatial_match</th>
-      <th>distance_m</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>35333.0</td>
-      <td>small_airport</td>
-      <td>Cullen Airport</td>
-      <td>RÍO CULLEN / TOTAL AUSTRAL</td>
-      <td>AR-0001</td>
-      <td>NaN</td>
-      <td>False</td>
-      <td>4092.090239</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>35334.0</td>
-      <td>small_airport</td>
-      <td>Estancia Los Cerros Airport</td>
-      <td>RÍO GRANDE / HELIPUERTO EA. RÍO EWAN</td>
-      <td>AR-0002</td>
-      <td>NaN</td>
-      <td>False</td>
-      <td>42307.927473</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>35335.0</td>
-      <td>small_airport</td>
-      <td>Rio Bellavista Airport</td>
-      <td>BAHÍA SAN SEBASTIÁN / PLANTA CRUZ DEL SUR</td>
-      <td>AR-0003</td>
-      <td>NaN</td>
-      <td>False</td>
-      <td>75293.453004</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>35398.0</td>
-      <td>small_airport</td>
-      <td>Merlo Airport</td>
-      <td>YACANTO DE CALAMUCHITA / ROCA VAL</td>
-      <td>AR-0004</td>
-      <td>NaN</td>
-      <td>False</td>
-      <td>39981.130934</td>
-    </tr>
-    <tr>
-      <th>5</th>
-      <td>333805.0</td>
-      <td>small_airport</td>
-      <td>Los Rulos Airport</td>
-      <td>BANDERA / AGROSERVICIO D.ª TERESA</td>
-      <td>AR-0006</td>
-      <td>NaN</td>
-      <td>False</td>
-      <td>52107.217406</td>
-    </tr>
-  </tbody>
-</table>
-</div>
 
 
 
