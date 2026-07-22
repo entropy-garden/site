@@ -31,6 +31,10 @@ ShowBreadCrumbs = true
 ShowCodeCopyButtons = true
 ShowToc = true
 
+[[params.socialIcons]]
+name = "linkedin"
+url = "https://linkedin.com/in/paula-petrenko"
+
 [languages.en.menu]
 
 [[languages.en.menu.main]]
@@ -60,10 +64,5 @@ name = "Проекты"
 url = "/posts/"
 weight = 20
 
-[[params.socialIcons]]
-name = "linkedin"
-url = "https://linkedin.com/in/paula-petrenko"
 
-[[params.socialIcons]]
-name = "github"
-url = "https://github.com/entropy-garden"
+
