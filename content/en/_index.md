@@ -4,7 +4,12 @@ title: "Entropy Garden"
 
 ## Data, information systems and structured thinking
 
-**Entropy Garden** is a dedicated space for transforming data chaos into structured knowledge. This site is designed to give shape to the uncertainty inherent in modern information systems, creating a continuous learning environment where data concepts take root and evolve.Explore core strategies, frameworks, and best practices in:
+### Why Entropy Garden?
+
+The name comes from a simple idea: creating a space that gives shape to the uncertainty present in data systems. A garden where ideas and concepts can be organized, grow, and evolve.
+
+
+This site serves as a continuous learning environment on topics related to:
 
 * Data Governance
 * Data Quality
