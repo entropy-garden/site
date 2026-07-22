@@ -31,9 +31,6 @@ ShowBreadCrumbs = true
 ShowCodeCopyButtons = true
 ShowToc = true
 
-[[params.socialIcons]]
-name = "linkedin"
-url = "https://linkedin.com/in/paula-petrenko"
 
 [languages.en.menu]
 
