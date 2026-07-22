@@ -63,3 +63,7 @@ weight = 20
 [[params.socialIcons]]
 name = "linkedin"
 url = "https://linkedin.com/in/paula-petrenko"
+
+[[params.socialIcons]]
+name = "github"
+url = "https://github.com/entropy-garden"
