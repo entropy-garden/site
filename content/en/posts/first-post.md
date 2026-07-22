@@ -59,8 +59,8 @@ The analysis was developed in a **Jupyter Notebook** using **Python**, with the 
 
 ---
 
-## Full Technical Report
+## Technical Report
 
-The complete technical report, including the methodology, business rules, source code, and results, is available below.
+The complete technical report is available through the link below. It includes the full assessment methodology, business rules, implementation details, results, and conclusions.
 
-👉 **[Open the full report](/projects/airport-data-quality/)**
+**📄 [Read the complete report](/reports/airport-data-quality.html)**
