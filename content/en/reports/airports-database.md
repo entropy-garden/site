@@ -206,6 +206,18 @@ The first dimension evaluated is **completeness**, which measures the extent to 
 
 As observed during the initial data exploration, missing values were identified in the `elevation_ft` and `gps_code` columns.
 
+| Field | Null Values | Completeness (%) |
+|:---------------|------------:|-----------------:|
+| `gps_code` | 717 | 23.89 |
+| `elevation_ft` | 34 | 96.39 |
+| `id` | 0 | 100.00 |
+| `type` | 0 | 100.00 |
+| `name` | 0 | 100.00 |
+| `iso_country` | 0 | 100.00 |
+| `latitude_deg` | 0 | 100.00 |
+| `longitude_deg` | 0 | 100.00 |
+| `ident` | 0 | 100.00 |
+
 
 ### 6.2 Data Uniqueness
 
@@ -225,7 +237,10 @@ These attributes are evaluated to identify potential duplicate records that may 
 **GPS Code**: No duplicate values were detected in the `gps_code` field among non-null records.
 
 
-
+| Field | Duplicate Count | Total Records | Uniqueness (%) |
+|:-----------|----------------:|--------------:|---------------:|
+| `ident` | 0 | 942 | 100.00 |
+| `gps_code` | 0 | 225 | 100.00 |
 
 
 **Spatial Uniqueness**: To identify potential spatial duplicates, a proximity-based clustering analysis was performed using a 2 km radius. Heliports, balloonports, and closed airports were excluded from this assessment. Heliports are commonly located in close proximity within urban areas, while balloonports and closed airports are not relevant to the objective of identifying potential duplicates among active airports. Including these facility types would introduce expected proximity clusters and increase the likelihood of false positives. Consequently, this analysis focuses on active airport records, where close geographic proximity is more likely to indicate duplicate or inconsistent location data rather than distinct facilities.
@@ -233,10 +248,15 @@ These attributes are evaluated to identify potential duplicate records that may 
 Records belonging to clusters with geo_cluster_size > 1 are considered potential cases requiring further review. The first five records are displayed below for inspection purposes.
 
 
+| id | type | name | iso_country | latitude_deg | longitude_deg | elevation_ft | ident | gps_code | geo_cluster_size |
+|---:|:----------------|:----------------------------------|:-----------:|-------------:|--------------:|-------------:|:---------|:---------|-----------------:|
+| 35329 | small_airport | Lago Fagnano North Airport | AR | -54.499699 | -67.173103 | 600 | SA15 | SA15 | 2 |
+| 41560 | small_airport | Tolhuin Lago Fagnano Airport | AR | -54.499596 | -67.172084 | 90 | SAWL | SAWL | 2 |
+| 348446 | small_airport | Campamento Darwin Airport | AR | -47.896640 | -66.460930 | 384 | AR-0681 | NaN | 2 |
+| 348448 | small_airport | Campamento Darwin West Airport | AR | -47.880520 | -66.471050 | 325 | AR-0683 | NaN | 2 |
+| 348749 | small_airport | Stroeder Southeast Airport | AR | -40.209680 | -62.604850 | 92 | AR-0725 | NaN | 2 |
 
-
-
-    The spatial uniqueness assessment identified 31 airport records belonging to geographic clusters within a 2 km radius. These records represent 4.10% of the evaluated airports and require further review to determine whether they correspond to duplicate records or distinct facilities located in close proximity. The remaining 95.90% satisfy the spatial uniqueness criterion.
+>The spatial uniqueness assessment identified 31 airport records belonging to geographic clusters within a 2 km radius. These records represent 4.10% of the evaluated airports and require further review to determine whether they correspond to duplicate records or distinct facilities located in close proximity. The remaining 95.90% satisfy the spatial uniqueness criterion.
 
 
 ### 6.3 Consistency
@@ -248,11 +268,17 @@ For this analysis, the relationship between the `ident` and `gps_code` fields is
 The first five records with identified inconsistencies are displayed below for inspection purposes.
 
 
+| id | type | name | iso_country | latitude_deg | longitude_deg | elevation_ft | ident | gps_code | equal |
+|---:|:----------------|:----------------------------------|:-----------:|-------------:|--------------:|-------------:|:---------|:---------|:-----:|
+| 35399 | small_airport | Bragado Airport | AR | -35.145811 | -60.480294 | 196 | AR-0005 | SA2X | False |
+| 38698 | small_airport | Bahia Blanca Aeroclub Airport | AR | -38.672059 | -62.352846 | 49 | AR-0023 | SA92 | False |
+| 38699 | small_airport | Balcarce Aeroclub Airport | AR | -37.915600 | -58.344200 | 393 | AR-0024 | SA20 | False |
+| 38700 | small_airport | Cipoletti Aeroclub Airport | AR | -38.893101 | -67.988602 | 885 | AR-0025 | SAHI | False |
+| 38703 | small_airport | Tandil Aeroclub Airport | AR | -37.265598 | -59.093300 | 583 | AR-0028 | SA1B | False |
 
 
 
-
-    The consistency assessment identified 46 inconsistent records. These records represent 4.88% of the dataset and require further review. The remaining 95.12% satisfy the consistency criterion.
+>The consistency assessment identified 46 inconsistent records. These records represent 4.88% of the dataset and require further review. The remaining 95.12% satisfy the consistency criterion.
 
 
 ### 6.4 Validity
@@ -267,7 +293,7 @@ Geographic validity is then assessed by visualizing the location of airports and
 
 
     
-![png](airports-database_files/airports-database_21_0.png)
+![Distribution of airports and heliports in Argentina](/images/argentina.png)
     
 
 
@@ -275,9 +301,15 @@ The map provides a preliminary overview of the spatial distribution of airports 
 
 A spatial validation is then performed using a geographic database of ocean water bodies. Records whose coordinates intersect these polygons are extracted into a separate dataset for individual review. The first five records of this subset are displayed below for inspection purposes.t these polygons are extracted into a separate dataset for individual review.
 
+| id | type | name | iso_country | latitude_deg | longitude_deg | elevation_ft | ident |
+|---:|:----------|:------------------------------------------|:-----------:|-------------:|--------------:|-------------:|:---------|
+| 38721 | heliport | Aries Heliport | AR | -52.6831 | -68.0419 | NaN | AR-0046 |
+| 38781 | heliport | Club Nautico San Isidro Heliport | AR | -34.4614 | -58.5003 | 6 | AR-0106 |
+| 38861 | heliport | Heliplataforma Am I Heliport | AR | -52.5192 | -68.3858 | 98 | AR-0186 |
+| 38862 | heliport | Heliplataforma Carina/Total Fina ELF | AR | -52.7572 | -67.2194 | 30 | AR-0187 |
+| 38863 | heliport | Heliplataforma/Am-2 Heliport | AR | -52.5489 | -68.3125 | 134 | AR-0188 |
 
-
-    The validity assessment identified 21 records whose coordinates intersect ocean water bodies. These records represent 2.23% of the dataset and require further review. The remaining 97.77% satisfy the validity criterion.
+>The validity assessment identified 21 records whose coordinates intersect ocean water bodies. These records represent 2.23% of the dataset and require further review. The remaining 97.77% satisfy the validity criterion.
 
 
 ### 6.5 Accuracy
@@ -288,38 +320,56 @@ Accuracy assesses the correctness of the data by comparing it with independent r
 
 The first five records with elevation differences greater than 100 feet are displayed below for inspection purposes.
 
+| id | type | name | iso_country | latitude_deg | longitude_deg | elevation_ft | ident | gps_code | elevation_api | elevation_api_ft |
+|---:|:----------------|:--------------------------------|:-----------:|-------------:|--------------:|-------------:|:---------|:---------|--------------:|-----------------:|
+| 35334 | small_airport | Estancia Los Cerros Airport | AR | -54.343000 | -67.837532 | 1914 | AR-0002 | NaN | 82.0 | 269.03 |
+| 35335 | small_airport | Rio Bellavista Airport | AR | -53.982700 | -68.523598 | 201 | AR-0003 | NaN | 95.0 | 311.68 |
+| 35398 | small_airport | Merlo Airport | AR | -32.358200 | -65.017403 | 796 | AR-0004 | NaN | 843.0 | 2765.75 |
+| 42800 | small_airport | Agro Servicio Yoris Airport | AR | -26.583055 | -64.529724 | 1043 | AR-0013 | NaN | 355.0 | 1164.70 |
+| 35409 | closed | Saenz Peña Airport | AR | -26.815800 | -60.448299 | 20 | AR-0015 | NaN | 91.0 | 298.56 |
 
 
-
-    The accuracy assessment was performed on 906 records with available elevation values, excluding 36 records with missing data. The assessment identified 68 records with elevation differences exceeding the 100-foot tolerance. These records represent 7.51% of the assessed records and require further review. The remaining 92.49% satisfied the accuracy criterion.
+>The accuracy assessment was performed on 906 records with available elevation values, excluding 36 records with missing data. The assessment identified 68 records with elevation differences exceeding the 100-foot tolerance. These records represent 7.51% of the assessed records and require further review. The remaining 92.49% satisfied the accuracy criterion.
 
 
 **Airport Record Matching** The MADHEL airport database is used as an independent reference source for record matching. The first five records are displayed below to provide an overview of its structure and key attributes.
 
 
-
+| name | idtext | n_id | iata | lat | lon | traffic_usage | traffic_type | waypoint_type |
+|:------------------------------------|:------:|:----:|:----:|---------:|----------:|:-------------|-------------:|:-------------|
+| CORONEL BOGADO / AGROSERVICIOS | NaN | ACB | NaN | -33.272260 | -60.570660 | PRIVADO | 2 | AD |
+| GENERAL ACHA | NaN | ACH | NaN | -37.401640 | -64.613510 | PUBLICO | 2 | AD |
+| ARRECIFES / LA CURA MALAL | NaN | ACM | NaN | -34.075740 | -60.141700 | PRIVADO | 2 | AD |
+| LA BANDA / ALAS DEL NORTE | NaN | ADN | NaN | -27.689278 | -64.167861 | NaN | 2 | AD |
+| PUERTO DESEADO | SAWD | ADO | PUD | -47.735110 | -65.904100 | PUBLICO | 2 | AD |
 
 
 Since each data source uses its own internal identifiers, records cannot be matched solely by their primary keys. Therefore, the record matching process is performed in two stages. First, a full outer join is carried out using the airport business identifier to identify records present in both datasets, as well as records unique to each source. Subsequently, records without an identifier match are evaluated using geographic proximity to determine whether they represent the same real-world airport despite using different identifiers.
 
-    The OurAirports dataset contains 942 airport records, while the MADHEL reference dataset contains 723 records. An initial record matching based on airport identifiers identified 119 matching records across both datasets. In addition, 823 records were found only in the OurAirports dataset, while 604 records were unique to the MADHEL dataset. 
+>The OurAirports dataset contains 942 airport records, while the MADHEL reference dataset contains 723 records. An initial record matching based on airport identifiers identified 119 matching records across both datasets. In addition, 823 records were found only in the OurAirports dataset, while 604 records were unique to the MADHEL dataset. 
 
 
 Geographic proximity is used as a secondary matching criterion for records that could not be linked through airport identifiers. A maximum distance of 500 meters was selected to account for minor positional differences between independent data providers. Such differences may arise because each dataset can represent a different reference point within the airport (e.g., the Airport Reference Point, runway threshold, or geometric center), as well as from variations in coordinate precision and data collection methodologies. Airports located within 500 meters of each other are therefore considered potential matches representing the same real-world entity.
 
-    0 OurAirports records and 2 MADHEL records were excluded from the spatial matching due to missing coordinates.
-    The spatial matching process identified 499 additional record pairs within a 500-meter threshold.
-    Following both the identifier-based and geographic matching stages, 324 records from the OurAirports dataset and 105 records from the MADHEL dataset remained unmatched.
+>0 OurAirports records and 2 MADHEL records were excluded from the spatial matching due to missing coordinates.
+The spatial matching process identified 499 additional record pairs within a 500-meter threshold.
+Following both the identifier-based and geographic matching stages, 324 records from the OurAirports dataset and 105 records from the MADHEL dataset remained unmatched.
 
 
 The table below presents the first five records that remained unmatched after completing both matching stages. Although these airports could not be reconciled with the MADHEL reference dataset, the nearest airport candidate is included together with the calculated geographic distance. This information facilitates the manual review of unmatched records and helps determine whether they correspond to missing reference data, closed airports, or airports represented with substantially different locations.
 
 
+| id | type | name_ourairports | name | ident | idtext | spatial_match | distance_m |
+|---:|:----------------|:------------------------------|:-------------------------------------------|:---------|:------:|:-------------:|-----------:|
+| 35333 | small_airport | Cullen Airport | RÍO CULLEN / TOTAL AUSTRAL | AR-0001 | NaN | False | 4092.09 |
+| 35334 | small_airport | Estancia Los Cerros Airport | RÍO GRANDE / HELIPUERTO EA. RÍO EWAN | AR-0002 | NaN | False | 42307.93 |
+| 35335 | small_airport | Rio Bellavista Airport | BAHÍA SAN SEBASTIÁN / PLANTA CRUZ DEL SUR | AR-0003 | NaN | False | 75293.45 |
+| 35398 | small_airport | Merlo Airport | YACANTO DE CALAMUCHITA / ROCA VAL | AR-0004 | NaN | False | 39981.13 |
+| 333805 | small_airport | Los Rulos Airport | BANDERA / AGROSERVICIO D.ª TERESA | AR-0006 | NaN | False | 52107.22 |
 
 
 
-
-    Following the exclusion of closed airports, 67.48% of the active OurAirports dataset was successfully matched against the MADHEL reference dataset. The remaining 293 records (32.52%) could not be matched and require further review. A total of 31 closed airports were excluded from this analysis.
+> Following the exclusion of closed airports, 67.48% of the active OurAirports dataset was successfully matched against the MADHEL reference dataset. The remaining 293 records (32.52%) could not be matched and require further review. A total of 31 closed airports were excluded from this analysis.
 
 
 ## 7. Results Presentation
