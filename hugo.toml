@@ -59,3 +59,7 @@ identifier = "posts"
 name = "Проекты"
 url = "/posts/"
 weight = 20
+
+[[params.socialIcons]]
+name = "linkedin"
+url = "https://linkedin.com/in/paula-petrenko"
