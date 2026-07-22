@@ -1,41 +1,66 @@
-<h1>Data Quality Assessment of an Argentine Airport Dataset</h1>
+---
+title: "Data Quality Assessment of an Argentine Airport Dataset"
+date: 2026-07-22T15:00:00+03:00
+draft: false
+tags:
+  - Data Quality
+  - Data Governance
+  - DAMA
+  - Python
+  - Data Stewardship
+categories:
+  - Projects
+description: "A data quality assessment of the OurAirports dataset following DAMA-DMBOK principles."
+---
 
-<p>
-As the <strong>DAMA-DMBOK</strong> correctly states, the primary objective of
-<strong>Data Management</strong> is to enable organizations to derive value from
-their data. Among its Knowledge Areas, <strong>Data Quality</strong> plays a
-fundamental role and has one of the greatest impacts on the value of this
-digital asset.
-</p>
+# Data Quality Assessment of an Argentine Airport Dataset
 
-<p>
-Just as high-quality data increases business value and creates new opportunities,
-poor-quality data generates significant costs. According to the
-<em>MIT Sloan Management Review</em>, these costs account for between
-<strong>15% and 20% of a company's revenue</strong>. In an increasingly
-data-driven world, achieving higher standards of data quality is becoming more
-important than ever.
-</p>
+As the **DAMA-DMBOK** correctly states, the primary objective of **Data Management** is to enable organizations to derive value from their data. Among its Knowledge Areas, **Data Quality** plays a fundamental role and has one of the greatest impacts on the value of this digital asset.
 
-<p>
-But what exactly is <strong>high-quality data</strong>? According to the
-DAMA-DMBOK, it is data that
-<em>"meets the expectations and needs of data consumers."</em>
-In other words, whether a dataset is considered to be of good or poor quality
-depends largely on its intended use.
-</p>
+Just as high-quality data increases business value and creates new opportunities, poor-quality data generates significant costs. According to the *MIT Sloan Management Review*, these costs account for between **15% and 20% of a company's revenue**. In an increasingly data-driven world, achieving higher standards of data quality is becoming more important than ever.
 
-<p>
-The project presented here not only proposes a methodology for assessing the
-quality of an aviation dataset, but also explores the inherent complexity of the
-process. Rather than focusing solely on missing values or duplicate records, the
-assessment incorporates business rules, external reference sources, identity
-resolution, and domain knowledge to provide a more comprehensive evaluation.
-</p>
+But what exactly is **high-quality data**? According to the DAMA-DMBOK, it is data that *"meets the expectations and needs of data consumers."* In other words, whether a dataset is considered to be of good or poor quality depends largely on its intended use.
 
-<p>
-The analysis was developed in a <strong>Jupyter Notebook</strong> using
-<strong>Python</strong>, with the objective of producing a reproducible and
-transparent data quality assessment aligned with the principles described in the
-DAMA-DMBOK.
-</p>
+The project presented here not only proposes a methodology for assessing the quality of an aviation dataset, but also explores the inherent complexity of the process. Rather than focusing solely on missing values or duplicate records, the assessment incorporates business rules, external reference sources, identity resolution, and domain knowledge to provide a more comprehensive evaluation.
+
+The analysis was developed in a **Jupyter Notebook** using **Python**, with the objective of producing a reproducible and transparent data quality assessment aligned with the principles described in the DAMA-DMBOK.
+
+---
+
+## Project Overview
+
+**Dataset**
+
+- OurAirports – Argentina
+
+**Technologies**
+
+- Python
+- Jupyter Notebook
+- Pandas
+- GeoPandas
+- BallTree
+
+**Data Quality Dimensions**
+
+- Completeness
+- Uniqueness
+- Consistency
+- Validity
+- Accuracy
+
+**Highlights**
+
+- Business-rule driven assessment
+- Data Quality Scorecard
+- Identity Resolution
+- Spatial record matching
+- External validation using independent reference datasets
+
+---
+
+## Full Technical Report
+
+The complete technical report, including the methodology, business rules, source code, and results, is available below.
+
+👉 **[Open the full report](/projects/airport-data-quality/)**
