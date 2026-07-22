@@ -20,8 +20,6 @@ contentDir = "content/ru"
 languageName = "Русский"
 weight = 2
 
-
-
 [params]
 defaultTheme = "auto"
 disableThemeToggle = false
@@ -43,7 +41,7 @@ weight = 10
 
 [[languages.en.menu.main]]
 identifier = "posts"
-name = "Posts"
+name = "Projects"
 url = "/posts/"
 weight = 20
 
@@ -52,12 +50,12 @@ weight = 20
 
 [[languages.ru.menu.main]]
 identifier = "about"
-name = "О проекте"
+name = "Обо мне"
 url = "/about/"
 weight = 10
 
 [[languages.ru.menu.main]]
 identifier = "posts"
-name = "Посты"
+name = "Проекты"
 url = "/posts/"
 weight = 20
