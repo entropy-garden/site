@@ -2,8 +2,6 @@
 title: "About"
 ---
 
-# About
-
 Hi! I'm Paula, a Data Steward with a passion for data quality, governance, and information management.
 
 This blog is where I document projects, experiments, and ideas related to data stewardship, data quality, and modern data ecosystems. My goal is to share practical approaches, methodologies, and lessons learned while working with data.
