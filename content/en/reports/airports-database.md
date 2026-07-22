@@ -116,6 +116,13 @@ This section presents a basic overview of the dataset, including its structure a
 
 To gain a clearer perspective, the first five records of the dataset are displayed. This allows for a quick inspection of how the data is structured and the type of information contained in each field.
 
+| id | type | name | iso_country | latitude_deg | longitude_deg | elevation_ft | ident | gps_code |
+|---:|:----------------|:------------------------------|:-----------:|-------------:|--------------:|-------------:|:---------|:---------|
+| 35333 | small_airport | Cullen Airport | AR | -52.885740 | -68.414956 | 132 | AR-0001 | NaN |
+| 35334 | small_airport | Estancia Los Cerros Airport | AR | -54.343000 | -67.837532 | 1914 | AR-0002 | NaN |
+| 35335 | small_airport | Rio Bellavista Airport | AR | -53.982700 | -68.523598 | 201 | AR-0003 | NaN |
+| 35398 | small_airport | Merlo Airport | AR | -32.358200 | -65.017403 | 796 | AR-0004 | NaN |
+| 35399 | small_airport | Bragado Airport | AR | -35.145811 | -60.480294 | 196 | AR-0005 | SA2X |
 
 
 In the following output, the basic structure of the DataFrame is presented. The dataset consists of 942 entries and 9 columns.
@@ -160,6 +167,16 @@ The following summary statistics provide an initial overview of the numerical at
 
 Overall, these descriptive statistics provide an initial understanding of the numerical data and help identify potential anomalies that will be investigated through the business rules defined for this assessment.
 
+| Statistic | latitude_deg | longitude_deg | elevation_ft |
+|:---------|-------------:|--------------:|-------------:|
+| Count | 942.000000 | 942.000000 | 908.000000 |
+| Mean | -35.390905 | -62.908536 | 801.696035 |
+| Standard Deviation | 6.671947 | 4.095665 | 1296.457558 |
+| Minimum | -54.843300 | -72.885820 | 6.000000 |
+| 25th Percentile | -38.005901 | -65.493250 | 131.750000 |
+| Median (50%) | -34.444700 | -62.180665 | 316.000000 |
+| 75th Percentile | -31.508499 | -59.450899 | 903.000000 |
+| Maximum | -22.123510 | -53.673332 | 13000.000000 |
 
 
 ## 5. Business Rules Definition
