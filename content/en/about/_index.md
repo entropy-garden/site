@@ -12,4 +12,4 @@ Outside of work, I find balance in nature, especially in colder climates. One of
 
 - 📧 **Email:** <info@entropy-garden.net>
 - 💼 **LinkedIn:** [paula-petrenko](https://linkedin.com/in/paula-petrenko)
-- 📄 **Curriculum Vitae](https://docs.google.com/document/d/e/2PACX-1vS7qx7fcHQ3JzKCMd02AivsyquVs0wyVLq5-x2vgLzGNQlPYyRTDSSjTQcN60-eiduV_CyvgGlzVgnJ/pub)
+- 📄 **Curriculum Vitae (https://docs.google.com/document/d/e/2PACX-1vS7qx7fcHQ3JzKCMd02AivsyquVs0wyVLq5-x2vgLzGNQlPYyRTDSSjTQcN60-eiduV_CyvgGlzVgnJ/pub)
