@@ -194,7 +194,7 @@ The business rules used in this assessment are summarized below:
 | DQ-005  | Coordinates must fall within Argentina boundaries                 | Validity     | High     |
 | DQ-006  | Elevation must fall within the valid elevation range for Argentina.                     | Validity     | Medium   |
 | DQ-007  | If a 'gps_code' is available, its value must match 'ident'                    | Consistency  | Medium     |
-| DQ-008  | Coordinates must be unique within a 3 km spatial radius         | Uniqueness   | High     |    |
+| DQ-008  | Coordinates must be unique within a 2 km spatial radius         | Uniqueness   | High     |    |
 
 These rules are implemented as deterministic validation checks and constitute the baseline for assessing compliance across the selected data quality dimensions.
 
