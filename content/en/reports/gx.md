@@ -461,8 +461,9 @@ context.build_data_docs()
 # Open Data Docs
 context.open_data_docs()
 
-![Great Expectations Data Docs](static/images/gx.png)
 ```
+
+![Great Expectations Data Docs](static/images/gx.png)
 
 ## 9. Automating the Workflow
 
