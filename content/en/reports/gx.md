@@ -98,6 +98,8 @@ context = gx.get_context(project_root_dir="gx")
 
 Configure the data source, create a data asset, define a batch, and load the dataset into Great Expectations for validation.
 
+```pytho
+
 # Create a Pandas data source
 data_source = context.data_sources.add_pandas(
     name="local_pandas"
@@ -136,6 +138,7 @@ batch.head()
 2     -68.523598         201.0          AR      NaN  
 3     -65.017403         796.0          AR      NaN  
 4     -60.480294         196.0          AR     SA2X 
+```
 
 ## 5. Defining Expectations
 
