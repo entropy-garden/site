@@ -1,32 +1,30 @@
 ---
-title: "Automating Data Quality Validation with Great Expectations"
-date: 2026-07-30T18:00:00+03:00
+title: "Data Quality Assessment of an Argentine Airport Dataset"
+date: 2026-07-22T15:00:00+03:00
 draft: false
 tags:
   - Data Quality
   - Data Governance
-  - Data Stewardship
-  - Great Expectations
+  - DAMA
   - Python
-  - Data Validation
+  - Data Stewardship
 categories:
   - Projects
-description: "Automating business rule validation for an aviation dataset using Great Expectations."
+description: "A data quality assessment of the OurAirports dataset following DAMA-DMBOK principles."
+hiddenInHomeList: true
 ---
 
-# Automating Data Quality Validation with Great Expectations
+# Data Quality Assessment of an Argentine Airport Dataset
 
-In my previous article, I presented my first project, in which I assessed the **data quality** of an Argentine **aviation dataset**. While it is necessary to perform an initial, thorough analysis when working with a new **data source** that we consider critical, the reality is that, in day-to-day operations, we need different solutions that can be integrated into a **data pipeline**.
+As the **DAMA-DMBOK** correctly states, the primary objective of **Data Management** is to enable organizations to derive value from their data. Among its Knowledge Areas, **Data Quality** plays a fundamental role and has one of the greatest impacts on the value of this digital asset.
 
-This is because we should never assume that a dataset is of good quality. And this is not only because the **data source** may have introduced errors or because it may be more or less reliable. Nor is it necessarily because the file may have been unexpectedly modified during the **ingestion process**. We must never forget that **data quality** depends on the context, and what we consider to meet the expectations for a data source should be verified continuously. This is where tools such as **Great Expectations** become especially useful.
+Just as high-quality data increases business value and creates new opportunities, poor-quality data generates significant costs. According to the *MIT Sloan Management Review*, these costs account for between **15% and 20% of a company's revenue**. In an increasingly data-driven world, achieving higher standards of data quality is becoming more important than ever.
 
-In a future article, we will see how to integrate this tool into a complete **data pipeline**. For now, I will focus on introducing its core features and on demonstrating how to automate the validation of **business rules**, including their corresponding **compliance thresholds**.
+But what exactly is **high-quality data**? According to the DAMA-DMBOK, it is data that *"meets the expectations and needs of data consumers."* In other words, whether a dataset is considered to be of good or poor quality depends largely on its intended use.
 
-So why not use **Great Expectations** for the initial assessment? Because the tool is designed to be integrated into a **production pipeline** and does not provide the flexibility required for a truly exhaustive **exploratory analysis**. In the case of the aviation dataset, one example was identifying aerodromes located over bodies of water, a validation that required **geospatial analysis** and **external reference data**.
+The project presented here not only proposes a methodology for assessing the quality of an aviation dataset, but also explores the inherent complexity of the process. Rather than focusing solely on missing values or duplicate records, the assessment incorporates business rules, external reference sources, identity resolution, and domain knowledge to provide a more comprehensive evaluation.
 
-At the same time, **Great Expectations** is particularly useful for evaluating the **reasonableness** dimension of **data quality**, since it makes it easy to detect significant changes between consecutive **data deliveries**, such as unexpected variations in the number of records, columns, or missing values compared with previous **batches**.
-
-For this project, however, we will leave this dimension aside, since we do not (yet) have previous data to compare against. Once we integrate **Great Expectations** into the **data pipeline**, we will incorporate the corresponding **business rules** and the necessary code to perform these validations.
+The analysis was developed in a **Jupyter Notebook** using **Python**, with the objective of producing a reproducible and transparent data quality assessment aligned with the principles described in the DAMA-DMBOK.
 
 ---
 
@@ -40,8 +38,9 @@ For this project, however, we will leave this dimension aside, since we do not (
 
 - Python
 - Jupyter Notebook
-- Great Expectations
 - Pandas
+- GeoPandas
+- BallTree
 
 ### Data Quality Dimensions
 
@@ -49,21 +48,20 @@ For this project, however, we will leave this dimension aside, since we do not (
 - Uniqueness
 - Consistency
 - Validity
+- Accuracy
 
 ### Highlights
 
-- Automated business rule validation
-- Reusable Expectation Suite
-- Validation Definitions
+- Business-rule driven assessment
 - Data Quality Scorecard
-- Great Expectations Data Docs
-- Compliance thresholds
-- Foundation for future pipeline integration
+- Identity Resolution
+- Spatial record matching
+- External validation using independent reference datasets
 
 ---
 
 ## Technical Report
 
-The complete notebook is available through the link below. It includes the implementation of the **Great Expectations Context**, **Expectation Suite**, **business rules**, **Validation Definition**, validation workflow, **Data Docs** generation, and the final **Data Quality Scorecard**.
+The complete technical report is available through the link below. It includes the full assessment methodology, business rules, implementation details, results, and conclusions.
 
-📄 **[Read the complete notebook](/reports/great-expectations-airports/)**
+📄 **[Read the complete report](/reports/airports-database/)**
