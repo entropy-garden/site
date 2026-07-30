@@ -1,4 +1,3 @@
-```markdown
 ---
 title: "Automating Data Quality Validation with Great Expectations"
 date: 2026-07-30T18:00:00+03:00
@@ -34,39 +33,38 @@ For this project, however, we will leave this dimension aside, since we do not (
 
 ## Project Overview
 
-**Dataset**
+### Dataset
 
-- OurAirports – Argentina
+- **OurAirports – Argentina**
 
-**Technologies**
+### Technologies
 
 - Python
 - Jupyter Notebook
 - Great Expectations
 - Pandas
 
-**Data Quality Dimensions**
+### Data Quality Dimensions
 
 - Completeness
 - Uniqueness
 - Consistency
 - Validity
 
-**Highlights**
+### Highlights
 
 - Automated business rule validation
 - Reusable Expectation Suite
 - Validation Definitions
 - Data Quality Scorecard
 - Great Expectations Data Docs
-- Production-ready project structure
-- Foundation for future pipeline automation
+- Compliance thresholds
+- Foundation for future pipeline integration
 
 ---
 
 ## Technical Report
 
-The complete notebook is available through the link below. It includes the implementation of the Great Expectations context, expectation suite, business rules, validation workflow, Data Docs generation, and the final data quality scorecard.
+The complete notebook is available through the link below. It includes the implementation of the **Great Expectations Context**, **Expectation Suite**, **business rules**, **Validation Definition**, validation workflow, **Data Docs** generation, and the final **Data Quality Scorecard**.
 
-**📄 [Read the complete notebook](/reports/great-expectations-airports.md)**
-```
+📄 **[Read the complete notebook](/reports/great-expectations-airports/)**
