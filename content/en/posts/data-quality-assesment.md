@@ -30,11 +30,11 @@ The analysis was developed in a **Jupyter Notebook** using **Python**, with the 
 
 ## Project Overview
 
-### Dataset
+**Dataset**
 
-- **OurAirports – Argentina**
+- OurAirports – Argentina
 
-### Technologies
+**Technologies**
 
 - Python
 - Jupyter Notebook
@@ -42,7 +42,7 @@ The analysis was developed in a **Jupyter Notebook** using **Python**, with the 
 - GeoPandas
 - BallTree
 
-### Data Quality Dimensions
+**Data Quality Dimensions**
 
 - Completeness
 - Uniqueness
@@ -50,7 +50,7 @@ The analysis was developed in a **Jupyter Notebook** using **Python**, with the 
 - Validity
 - Accuracy
 
-### Highlights
+**Highlights**
 
 - Business-rule driven assessment
 - Data Quality Scorecard
@@ -64,4 +64,4 @@ The analysis was developed in a **Jupyter Notebook** using **Python**, with the 
 
 The complete technical report is available through the link below. It includes the full assessment methodology, business rules, implementation details, results, and conclusions.
 
-📄 **[Read the complete report](/reports/airports-database/)**
+**📄 [Read the complete report](/reports/airports-database.md)**
