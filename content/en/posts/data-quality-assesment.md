@@ -12,7 +12,6 @@ tags:
 categories:
   - Projects
 description: "Automating business rule validation for an aviation dataset using Great Expectations."
-hiddenInHomeList: true
 ---
 
 # Automating Data Quality Validation with Great Expectations

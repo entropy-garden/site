@@ -11,7 +11,6 @@ tags:
 categories:
   - Projects
 description: "A data quality assessment of the OurAirports dataset following DAMA-DMBOK principles."
-hiddenInHomeList: true
 ---
 
 # Data Quality Assessment of an Argentine Airport Dataset
