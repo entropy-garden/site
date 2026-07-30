@@ -42,6 +42,7 @@ ShowPostNavLinks: true
 ShowCodeCopyButtons: true
 ShowWordCount: true
 comments: false
+hiddenInHomeList: true
 ---
 
 
