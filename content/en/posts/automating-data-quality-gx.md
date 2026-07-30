@@ -1,6 +1,6 @@
 ---
 title: "Automating Data Quality Validation with Great Expectations"
-date: 2026-07-30T18:00:00+03:00
+date: 2026-07-30
 draft: false
 tags:
   - Data Quality
