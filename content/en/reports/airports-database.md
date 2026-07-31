@@ -46,8 +46,6 @@ hiddenInHomeList: true
 ---
 
 
-# Data Quality Assessment of an Airport Database for Argentina
-
 The assessment follows the data quality dimensions defined in the DAMA-DMBOK framework and evaluates the dataset through a set of business rules supported by external reference sources where applicable.
 
 ## 1. Introduction

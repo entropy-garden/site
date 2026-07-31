@@ -1,5 +1,5 @@
 ---
-title: "Automating Data Quality Validation with Great Expectations"
+title: "Implementing Automated Data Quality Controls using Great Expectations"
 date: 2026-07-27T15:00:00+03:00
 draft: false
 
@@ -45,8 +45,6 @@ comments: false
 hiddenInHomeList: true
 ---
 
-
-# Implementing Automated Data Quality Controls using Great Expectations
 
 ## 1. Introduction
 
