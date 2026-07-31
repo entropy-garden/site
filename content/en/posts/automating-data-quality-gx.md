@@ -15,7 +15,6 @@ description: "Automating business rule validation for an aviation dataset using 
 hiddenInHomeList: true
 ---
 
-# Automating Data Quality Validation with Great Expectations
 
 In my previous article, I presented my first project, in which I assessed the **data quality** of an Argentine **aviation dataset**. While it is necessary to perform an initial, thorough analysis when working with a new **data source** that we consider critical, the reality is that, in day-to-day operations, we need different solutions that can be integrated into a **data pipeline**.
 
