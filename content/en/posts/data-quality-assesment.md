@@ -14,8 +14,6 @@ description: "A data quality assessment of the OurAirports dataset following DAM
 hiddenInHomeList: true
 ---
 
-# Data Quality Assessment of an Argentine Airport Dataset
-
 As the **DAMA-DMBOK** correctly states, the primary objective of **Data Management** is to enable organizations to derive value from their data. Among its Knowledge Areas, **Data Quality** plays a fundamental role and has one of the greatest impacts on the value of this digital asset.
 
 Just as high-quality data increases business value and creates new opportunities, poor-quality data generates significant costs. According to the *MIT Sloan Management Review*, these costs account for between **15% and 20% of a company's revenue**. In an increasingly data-driven world, achieving higher standards of data quality is becoming more important than ever.
