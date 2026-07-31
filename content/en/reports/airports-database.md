@@ -46,8 +46,6 @@ hiddenInHomeList: true
 ---
 
 
-The assessment follows the data quality dimensions defined in the DAMA-DMBOK framework and evaluates the dataset through a set of business rules supported by external reference sources where applicable.
-
 ## 1. Introduction
 
 In the aviation industry, data quality plays a crucial role, as accuracy and reliability directly impact safety, operational efficiency, and strategic planning. This report assesses the data quality of an airport database for Argentina, focusing on key dimensions such as completeness, uniqueness, validity, consistency, and accuracy.
