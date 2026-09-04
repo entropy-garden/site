@@ -3,6 +3,9 @@ title = "Entropy Garden"
 theme = "PaperMod"
 languageCode = "en-us"
 
+[markup.goldmark.renderer]
+unsafe = true
+
 defaultContentLanguage = "en"
 
 [pagination]
