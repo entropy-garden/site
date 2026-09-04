@@ -4,7 +4,7 @@ title: "Entropy Garden"
 
 ## Data, information systems and structured thinking
 
-<img src="/images/multivac.png" alt="Multivac" width="50%">
+![Multivac](/images/multivac.png){width=30%}
 
 ### Why Entropy Garden?
 
