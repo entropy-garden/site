@@ -2,7 +2,8 @@
 title: "About"
 ---
 
-![Entropy Garden](/images/about.png)
+{{< figure src="/images/about.png" alt="Entropy Garden" width="50%" >}}
+
 
 Hi! I'm Paula, a Data Steward with a passion for data quality, governance, and information management.
 
